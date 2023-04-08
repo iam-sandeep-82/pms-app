@@ -12,9 +12,6 @@ pool:
 jobs:
 - job: job1
   steps:
-    - script: echo Hello, world!
-    - bash: java --version
-      displayName: 'Run a one-line script'
     - task: JavaToolInstaller@0
       inputs:
         versionSpec: '17'
@@ -25,7 +22,8 @@ jobs:
     - bash: java -version
     - bash: mvn -version
     - bash: ls $(DefaultWorkingDirectory)
-    - bash: cd $(DefaultWorkingDirectory)/app-1
+    - bash: cd $(DefaultWorkingDirectory)/
+    - bash: cd app-1
     - bash: ls -la
     - bash: mvn clean package
     - bash: ls -R $(DefaultWorkingDirectory)
