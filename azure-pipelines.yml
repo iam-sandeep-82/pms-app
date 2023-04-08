@@ -17,13 +17,11 @@ jobs:
     #     versionSpec: '17'
     #     jdkArchitectureOption: 'x64'
     #     jdkSourceOption: 'PreInstalled'
-    - bash: mkdir src
-    - bash: ls -la
-    - bash: ls $(DefaultWorkingDirectory)
-    - script: cd ./src/
-    - bash: touch file.txt
-    - bash: ls -la
-    
+    - script: |
+        mkdir src
+        ls -la
+        cd ./src/
+        touch file.txt
     # - bash: sudo apt update
     # - bash: sudo apt install maven
     # - bash: java -version
