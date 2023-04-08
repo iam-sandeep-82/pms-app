@@ -18,3 +18,4 @@ steps:
     versionSpec: '17'
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
+- bash: java --version
