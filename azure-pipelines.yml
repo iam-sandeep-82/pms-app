@@ -25,6 +25,7 @@ jobs:
     - bash: java -version
     - bash: mvn -version
     - bash: ls $(DefaultWorkingDirectory)
-    - bash: cd app-1
+    - bash: cd $(DefaultWorkingDirectory)/app-1
+    - bash: ls -la
     - bash: mvn clean package
     - bash: ls -R $(DefaultWorkingDirectory)
