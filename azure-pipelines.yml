@@ -22,6 +22,7 @@ jobs:
         ls -la
         cd ./src/
         touch file.txt
+        ls -la
     # - bash: sudo apt update
     # - bash: sudo apt install maven
     # - bash: java -version
