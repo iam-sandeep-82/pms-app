@@ -25,4 +25,7 @@ jobs:
         cd ./app-1/
         ls -la
         mvn clean package
-        ls -la
+        ls
+        cd ./target/
+        ls
+        java -jar app-1-0.0.1-SNAPSHOT.jar
