@@ -9,13 +9,22 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: echo Hello, world!
-- bash: java --version
-  displayName: 'Run a one-line script'
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '17'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
-- bash: java --version
+jobs:
+- job: job1
+  steps:
+    - script: echo Hello, world!
+    - bash: java --version
+      displayName: 'Run a one-line script'
+    - task: JavaToolInstaller@0
+      inputs:
+        versionSpec: '17'
+        jdkArchitectureOption: 'x64'
+        jdkSourceOption: 'PreInstalled'
+    - bash: sudo apt update
+    - bash: sudo apt install maven
+    - bash: java -version
+    - bash: maven -version
+    - bash: ls $(DefaultWorkingDirectory)
+    - bash: cd app-1
+    - bash: mvn clean package
+    - bash: ls -R $(DefaultWorkingDirectory)
