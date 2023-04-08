@@ -27,5 +27,8 @@ jobs:
         mvn clean package
         ls
         cd ./target/
-        ls
-        java -jar app-1-0.0.1-SNAPSHOT.jar
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(System.DefaultWorkingDirectory)/app-1/target/app-1-0.0.1-SNAPSHOT.jar'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
