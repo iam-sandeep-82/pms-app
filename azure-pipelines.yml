@@ -23,7 +23,7 @@ jobs:
     - bash: sudo apt update
     - bash: sudo apt install maven
     - bash: java -version
-    - bash: maven -version
+    - bash: mvn -version
     - bash: ls $(DefaultWorkingDirectory)
     - bash: cd app-1
     - bash: mvn clean package
