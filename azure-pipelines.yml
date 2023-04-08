@@ -12,24 +12,17 @@ pool:
 jobs:
 - job: job1
   steps:
-    # - task: JavaToolInstaller@0
-    #   inputs:
-    #     versionSpec: '17'
-    #     jdkArchitectureOption: 'x64'
-    #     jdkSourceOption: 'PreInstalled'
+    - task: JavaToolInstaller@0
+      inputs:
+        versionSpec: '17'
+        jdkArchitectureOption: 'x64'
+        jdkSourceOption: 'PreInstalled'
+    - bash: sudo apt update
+    - bash: sudo apt install maven
+    - bash: java -version
+    - bash: mvn -version
     - script: |
-        mkdir src
+        cd ./app-1/
         ls -la
-        cd ./src/
-        touch file.txt
+        mvn clean package
         ls -la
-    # - bash: sudo apt update
-    # - bash: sudo apt install maven
-    # - bash: java -version
-    # - bash: mvn -version
-    # - bash: ls $(DefaultWorkingDirectory)
-    # - bash: cd $(DefaultWorkingDirectory)
-    # - bash: cd app-1
-    # - bash: ls -la
-    # - bash: mvn clean package
-    # - bash: ls -R $(DefaultWorkingDirectory)
