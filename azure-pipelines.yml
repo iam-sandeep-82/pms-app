@@ -20,7 +20,7 @@ jobs:
     - bash: mkdir src
     - bash: ls -la
     - bash: ls $(DefaultWorkingDirectory)
-    - bash: cd ./src/
+    - script: cd ./src/
     - bash: touch file.txt
     - bash: ls -la
     
